@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+.mime{
+	background:lightgray;
+}
+</style>
+<title>Supports Test</title>
+</head>
+<body>
+<h1>Browser Support Checker</h1>
+<h2>Media</h2>
+<h3>Basics</h3>
+<table border="1">
+<tr>
+<th>Class</th>
+<th>Description</th>
+<th>Supported</th>
+</tr>
+<tr>
+<td><code class="mime">HTMLMediaElement</code></td>
+<td>-</td>
+<td id="media-basics-htmlmediaelement"></td>
+</tr>
+<tr>
+<td><code class="mime">MediaSource</code></td>
+<td>-</td>
+<td id="media-basics-mediasource"></td>
+</tr>
+</table>
+<h3>Containers</h3>
+<table border="1">
+<tr>
+<th>Codec</th>
+<th>Description</th>
+<th>Developer</th>
+<th>Supported</th>
+</tr>
+<tr>
+<td>Ogg (<code class="mime">audio/ogg</code>)</td>
+<td>Ogg container for audio</td>
+<td>Xiph</td>
+<td id="media-containers-ogg-audio"></td>
+</tr>
+<tr>
+<td>Ogg (<code class="mime">video/ogg</code>)</td>
+<td>Ogg container for audio and video</td>
+<td>Xiph</td>
+<td id="media-containers-ogg-video"></td>
+</tr>
+<tr>
+<td>Ogg (<code class="mime">application/ogg</code>)</td>
+<td>Ogg container for multiplexing</td>
+<td>Xiph</td>
+<td id="media-containers-ogg-application"></td>
+</tr>
+</table>
+<h3>Audio</h3>
+<table border="1">
+<tr>
+<th>Codec</th>
+<th>Description</th>
+<th>Developer</th>
+<th>Supported</th>
+</tr>
+<tr>
+<td>FLAC (<code class="mime">audio/ogg; codecs="flac"</code>)</td>
+<td>FLAC inside an Ogg container</td>
+<td>Xiph</td>
+<td id="media-audio-flac"></td>
+</tr>
+<tr>
+<td>FLAC (<code class="mime">audio/flac</code>)</td>
+<td>Raw FLAC (inside native container)</td>
+<td>Xiph</td>
+<td id="media-audio-flac-raw"></td>
+</tr>
+<tr>
+<td>Opus (<code class="mime">audio/ogg; codecs="opus"</code>)</td>
+<td>Opus inside an Ogg container</td>
+<td>Xiph</td>
+<td id="media-audio-opus"></td>
+</tr>
+<tr>
+<td>Opus (<code class="mime">audio/opus</code>)</td>
+<td>Raw Opus</td>
+<td>Xiph</td>
+<td id="media-audio-opus-raw"></td>
+</tr>
+<tr>
+<td>Speex (<code class="mime">audio/ogg; codecs="speex"</code>)</td>
+<td>Speex inside an Ogg container</td>
+<td>Xiph</td>
+<td id="media-audio-speex"></td>
+</tr>
+<tr>
+<td>Speex (<code class="mime">audio/speex</code> or <code class="mime">audio/x-speex</code>)</td>
+<td>Raw Speex</td>
+<td>Xiph</td>
+<td id="media-audio-speex-raw"></td>
+</tr>
+<tr>
+<td>Vorbis (<code class="mime">audio/ogg; codecs="vorbis"</code>)</td>
+<td>Vorbis inside an Ogg container</td>
+<td>Xiph</td>
+<td id="media-audio-vorbis"></td>
+</tr>
+<tr>
+<td>Vorbis (<code class="mime">audio/vorbis</code>)</td>
+<td>Raw Vorbis</td>
+<td>Xiph</td>
+<td id="media-audio-vorbis-raw"></td>
+</tr>
+</table>
+<h3>Video</h3>
+<table border="1">
+<tr>
+<th>Codec</th>
+<th>Description</th>
+<th>Developer</th>
+<th>Supported</th>
+</tr>
+<tr>
+<td>Daala (<code class="mime">video/ogg; codecs="daala"</code>)</td>
+<td>Daala inside an Ogg container</td>
+<td>Xiph</td>
+<td id="media-video-daala"></td>
+</tr>
+<tr>
+<td>Daala (<code class="mime">video/daala</code>)</td>
+<td>Raw Daala</td>
+<td>Xiph</td>
+<td id="media-video-daala-raw"></td>
+</tr>
+<tr>
+<td>Theora (<code class="mime">video/ogg; codecs="theora"</code>)</td>
+<td>Theora inside an Ogg container</td>
+<td>Xiph</td>
+<td id="media-video-theora"></td>
+</tr>
+<tr>
+<td>Theora (<code class="mime">video/theora</code>)</td>
+<td>Raw Theora</td>
+<td>Xiph</td>
+<td id="media-video-theora-raw"></td>
+</tr>
+</table>
+<h3>Streaming</h3>
+<table border="1">
+<tr>
+<th>Codec</th>
+<th>Description</th>
+<th>Developer</th>
+<th>Supported</th>
+</tr>
+<tr>
+<td>MPEG-DASH (<code class="mime">application/dash+xml</code>)</td>
+<td>Dynamic Adaptive Streaming over HTTP</td>
+<td>MPEG</td>
+<td id="media-streaming-dash"></td>
+</tr>
+<tr>
+<td>HLS (<code class="mime">application/vnd.apple.mpegurl</code>)</td>
+<td>HTTP Live Streaming</td>
+<td>Apple</td>
+<td id="media-streaming-hls"></td>
+</tr>
+<tr>
+<td>HLS Audio (<code class="mime">application/vnd.apple.mpegurl.audio</code>)</td>
+<td>HTTP Live Streaming (Audio only)</td>
+<td>Apple</td>
+<td id="media-streaming-hls-audio"></td>
+</tr>
+</table>
+<script>
+class BrowserSupportChecker{
+
+	static existsOn(clazz,parent){
+		return (!!clazz) && clazz in parent;
+	}
+
+	static existsGlobal(clazz){
+		return BrowserSupportChecker.existsOn(clazz,window);
+	}
+	
+	static isClassHTMLMediaElementSupported(){
+		return BrowserSupportChecker.existsGlobal('HTMLMediaElement');
+	}
+	
+	static isClassHTMLAudioElementSupported(){
+		return BrowserSupportChecker.existsGlobal('HTMLAudioElement');
+	}
+	
+	static isClassHTMLVideoElementSupported(){
+		return BrowserSupportChecker.existsGlobal('HTMLVideoElement');
+	}
+	
+	static isClassMediaSourceSupported(){
+		return BrowserSupportChecker.existsGlobal('MediaSource');
+	}
+	
+	static isCodecMIMETypeSupported(mimeType){
+		if(BrowserSupportChecker.isClassMediaSourceSupported()){
+			if(BrowserSupportChecker.existsOn('isTypeSupported',MediaSource)){
+				console.log(mimeType,MediaSource.isTypeSupported(mimeType));
+				let supported = MediaSource.isTypeSupported(mimeType);
+				if(supported){
+					return true;
+				}
+			}
+		}
+		if(BrowserSupportChecker.isClassHTMLVideoElementSupported()){
+			let video = document.createElement('video');
+			return video.canPlayType(mimeType);
+		}
+		return false;
+	}
+
+}
+
+function setSupported(elem,supported){
+	if(!elem){
+		return;
+	}
+	if(supported){
+		elem.innerHTML = '<b style="color:green;">Supported</b>';
+	}else{
+		elem.innerHTML = '<b style="color:red;">Not Supported</b>';
+	}
+}
+
+//////
+////// MEDIA - BASICS
+//////
+let htmlmediaelement = document.getElementById('media-basics-htmlmediaelement');
+setSupported(htmlmediaelement,BrowserSupportChecker.existsGlobal('HTMLMediaElement'));
+
+let mediasource = document.getElementById('media-basics-mediasource');
+setSupported(mediasource,BrowserSupportChecker.existsGlobal('MediaSource'));
+
+//////
+////// MEDIA - CONTAINERS
+//////
+let ogg_audio = document.getElementById('media-containers-ogg-audio');
+setSupported(ogg_audio,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg'));
+
+let ogg_video = document.getElementById('media-containers-ogg-video');
+setSupported(ogg_video,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg'));
+
+let ogg_application = document.getElementById('media-containers-ogg-application');
+setSupported(ogg_application,BrowserSupportChecker.isCodecMIMETypeSupported('application/ogg'));
+
+//////
+////// MEDIA - AUDIO
+//////
+let flac = document.getElementById('media-audio-flac');
+setSupported(flac,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="flac"'));
+
+let flac_raw = document.getElementById('media-audio-flac-raw');
+setSupported(flac_raw,BrowserSupportChecker.isCodecMIMETypeSupported('audio/flac'));
+
+let opus = document.getElementById('media-audio-opus');
+setSupported(opus,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="opus"'));
+
+let opus_raw = document.getElementById('media-audio-opus-raw');
+setSupported(opus_raw,BrowserSupportChecker.isCodecMIMETypeSupported('audio/opus'));
+
+let speex = document.getElementById('media-audio-speex');
+setSupported(speex,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="speex"'));
+
+let speex_raw = document.getElementById('media-audio-speex-raw');
+setSupported(speex_raw,BrowserSupportChecker.isCodecMIMETypeSupported('audio/speex') || BrowserSupportChecker.isCodecMIMETypeSupported('audio/x-speex'));
+
+let vorbis = document.getElementById('media-audio-vorbis');
+setSupported(vorbis,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="vorbis"'));
+
+let vorbis_raw = document.getElementById('media-audio-vorbis-raw');
+setSupported(vorbis_raw,BrowserSupportChecker.isCodecMIMETypeSupported('audio/vorbis'));
+
+//////
+////// MEDIA - VIDEO
+//////
+let daala = document.getElementById('media-video-daala');
+setSupported(daala,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; codecs="daala"'));
+
+let daala_raw = document.getElementById('media-video-daala-raw');
+setSupported(daala_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/daala'));
+
+let theora = document.getElementById('media-video-theora');
+setSupported(theora,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; codecs="theora"'));
+
+let theora_raw = document.getElementById('media-video-theora-raw');
+setSupported(theora_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/theora'));
+
+//////
+////// MEDIA - Streaming
+//////
+let dash = document.getElementById('media-streaming-dash');
+setSupported(dash,BrowserSupportChecker.isCodecMIMETypeSupported('application/dash+xml'));
+
+let hls = document.getElementById('media-streaming-hls');
+setSupported(hls,BrowserSupportChecker.isCodecMIMETypeSupported('application/vnd.apple.mpegurl'));
+
+let hls_audio = document.getElementById('media-streaming-hls-audio');
+setSupported(hls_audio,BrowserSupportChecker.isCodecMIMETypeSupported('application/vnd.apple.mpegurl.audio'));
+</script>
+</body>
+</html>
