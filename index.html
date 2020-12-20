@@ -38,10 +38,16 @@
 <th>Supported</th>
 </tr>
 <tr>
+<td>F4V (<code class="mime">video/x-f4v</code>)</td>
+<td>Flash MPEG-4 Video</td>
+<td>MacroMedia</td>
+<td id="media-containers-f4v"></td>
+</tr>
+<tr>
 <td>FLV (<code class="mime">video/x-flv</code>)</td>
 <td>Flash Video</td>
 <td>MacroMedia</td>
-<td id="media-containers-flashvideo"></td>
+<td id="media-containers-flv"></td>
 </tr>
 <tr>
 <td>Matroska (<code class="mime">audio/x-matroska</code>)</td>
@@ -101,52 +107,76 @@
 <th>Supported</th>
 </tr>
 <tr>
+<td>FLAC (<code class="mime">audio/flac</code>)</td>
+<td>FLAC Raw (native container)</td>
+<td>Xiph</td>
+<td id="media-audio-flac-raw"></td>
+</tr>
+<tr>
 <td>FLAC (<code class="mime">audio/ogg; codecs="flac"</code>)</td>
 <td>FLAC inside an Ogg container</td>
 <td>Xiph</td>
-<td id="media-audio-flac"></td>
+<td id="media-audio-flac-ogg"></td>
 </tr>
 <tr>
-<td>FLAC (<code class="mime">audio/flac</code>)</td>
-<td>Raw FLAC (inside native container)</td>
+<td>FLAC (<code class="mime">audio/webm; codecs="flac"</code>)</td>
+<td>FLAC inside an WebM container</td>
 <td>Xiph</td>
-<td id="media-audio-flac-raw"></td>
+<td id="media-audio-flac-webm"></td>
+</tr>
+<tr>
+<td>Opus (<code class="mime">audio/opus</code>)</td>
+<td>Opus Raw</td>
+<td>Xiph</td>
+<td id="media-audio-opus-raw"></td>
 </tr>
 <tr>
 <td>Opus (<code class="mime">audio/ogg; codecs="opus"</code>)</td>
 <td>Opus inside an Ogg container</td>
 <td>Xiph</td>
-<td id="media-audio-opus"></td>
+<td id="media-audio-opus-ogg"></td>
 </tr>
 <tr>
-<td>Opus (<code class="mime">audio/opus</code>)</td>
-<td>Raw Opus</td>
+<td>Opus (<code class="mime">audio/webm; codecs="opus"</code>)</td>
+<td>Opus inside an WebM container</td>
 <td>Xiph</td>
-<td id="media-audio-opus-raw"></td>
+<td id="media-audio-opus-webm"></td>
+</tr>
+<tr>
+<td>Speex (<code class="mime">audio/speex</code> or <code class="mime">audio/x-speex</code>)</td>
+<td>Speex Raw</td>
+<td>Xiph</td>
+<td id="media-audio-speex-raw"></td>
 </tr>
 <tr>
 <td>Speex (<code class="mime">audio/ogg; codecs="speex"</code>)</td>
 <td>Speex inside an Ogg container</td>
 <td>Xiph</td>
-<td id="media-audio-speex"></td>
+<td id="media-audio-speex-ogg"></td>
 </tr>
 <tr>
-<td>Speex (<code class="mime">audio/speex</code> or <code class="mime">audio/x-speex</code>)</td>
-<td>Raw Speex</td>
+<td>Speex (<code class="mime">audio/webm; codecs="speex"</code>)</td>
+<td>Speex inside an WebM container</td>
 <td>Xiph</td>
-<td id="media-audio-speex-raw"></td>
+<td id="media-audio-speex-webm"></td>
+</tr>
+<tr>
+<td>Vorbis (<code class="mime">audio/vorbis</code>)</td>
+<td>Vorbis Raw</td>
+<td>Xiph</td>
+<td id="media-audio-vorbis-raw"></td>
 </tr>
 <tr>
 <td>Vorbis (<code class="mime">audio/ogg; codecs="vorbis"</code>)</td>
 <td>Vorbis inside an Ogg container</td>
 <td>Xiph</td>
-<td id="media-audio-vorbis"></td>
+<td id="media-audio-vorbis-ogg"></td>
 </tr>
 <tr>
-<td>Vorbis (<code class="mime">audio/vorbis</code>)</td>
-<td>Raw Vorbis</td>
+<td>Vorbis (<code class="mime">audio/webm; codecs="vorbis"</code>)</td>
+<td>Vorbis inside an WebM container</td>
 <td>Xiph</td>
-<td id="media-audio-vorbis-raw"></td>
+<td id="media-audio-vorbis-webm"></td>
 </tr>
 </table>
 <h3>Video</h3>
@@ -158,40 +188,118 @@
 <th>Supported</th>
 </tr>
 <tr>
+<td>Daala (<code class="mime">video/daala</code>)</td>
+<td>Daala Raw</td>
+<td>Xiph</td>
+<td id="media-video-daala-raw"></td>
+</tr>
+<tr>
 <td>Daala (<code class="mime">video/ogg; codecs="daala"</code>)</td>
 <td>Daala inside an Ogg container</td>
 <td>Xiph</td>
-<td id="media-video-daala"></td>
+<td id="media-video-daala-ogg"></td>
 </tr>
 <tr>
-<td>Daala (<code class="mime">video/daala</code>)</td>
-<td>Raw Daala</td>
+<td>Daala (<code class="mime">video/webm; codecs="daala"</code>)</td>
+<td>Daala inside an WebM container</td>
 <td>Xiph</td>
-<td id="media-video-daala-raw"></td>
+<td id="media-video-daala-webm"></td>
+</tr>
+<tr>
+<td>Theora (<code class="mime">video/theora</code>)</td>
+<td>Theora Raw</td>
+<td>Xiph</td>
+<td id="media-video-theora-raw"></td>
 </tr>
 <tr>
 <td>Theora (<code class="mime">video/ogg; codecs="theora"</code>)</td>
 <td>Theora inside an Ogg container</td>
 <td>Xiph</td>
-<td id="media-video-theora"></td>
+<td id="media-video-theora-ogg"></td>
 </tr>
 <tr>
-<td>Theora (<code class="mime">video/theora</code>)</td>
-<td>Raw Theora</td>
+<td>Theora (<code class="mime">video/webm; codecs="theora"</code>)</td>
+<td>Theora inside an WebM container</td>
 <td>Xiph</td>
-<td id="media-video-theora-raw"></td>
+<td id="media-video-theora-webm"></td>
+</tr>
+<tr>
+<td>VP3 (<code class="mime">video/x-vp3</code>)</td>
+<td>VP3 Raw</td>
+<td>On2</td>
+<td id="media-video-vp3-raw"></td>
+</tr>
+<tr>
+<td>VP5 (<code class="mime">video/x-vp5</code>)</td>
+<td>VP5 Raw</td>
+<td>On2</td>
+<td id="media-video-vp5-raw"></td>
+</tr>
+<tr>
+<td>VP6 (<code class="mime">video/x-vp6</code>)</td>
+<td>VP6 Raw</td>
+<td>On2</td>
+<td id="media-video-vp6-raw"></td>
+</tr>
+<tr>
+<td>VP7 (<code class="mime">video/x-vp7</code>)</td>
+<td>VP7 Raw</td>
+<td>On2</td>
+<td id="media-video-vp7-raw"></td>
+</tr>
+<tr>
+<td>VP8 (<code class="mime">video/vp8</code>)</td>
+<td>VP8 Raw</td>
+<td>Google</td>
+<td id="media-video-vp8-raw"></td>
+</tr>
+<tr>
+<td>VP8 (<code class="mime">video/ogg; codecs="vp8"</code>)</td>
+<td>VP8 inside an Ogg container</td>
+<td>Google</td>
+<td id="media-video-vp8-ogg"></td>
 </tr>
 <tr>
 <td>VP8 (<code class="mime">video/webm; codecs="vp8"</code>)</td>
 <td>VP8 inside an WebM container</td>
 <td>Google</td>
-<td id="media-video-vp8"></td>
+<td id="media-video-vp8-webm"></td>
 </tr>
 <tr>
-<td>VP8 (<code class="mime">video/vp8</code>)</td>
-<td>Raw VP8</td>
+<td>VP9 (<code class="mime">video/vp9</code>)</td>
+<td>VP9 Raw</td>
 <td>Google</td>
-<td id="media-video-vp8-raw"></td>
+<td id="media-video-vp9-raw"></td>
+</tr>
+<tr>
+<td>VP9 (<code class="mime">video/ogg; codecs="vp9"</code>)</td>
+<td>VP9 inside an Ogg container</td>
+<td>Google</td>
+<td id="media-video-vp9-ogg"></td>
+</tr>
+<tr>
+<td>VP9 (<code class="mime">video/webm; codecs="vp9"</code>)</td>
+<td>VP9 inside an WebM container</td>
+<td>Google</td>
+<td id="media-video-vp9-webm"></td>
+</tr>
+<tr>
+<td>AV1 (<code class="mime">video/av1</code>)</td>
+<td>AOMedia Video 1 Raw (VP10 like)</td>
+<td>Google</td>
+<td id="media-video-av1-raw"></td>
+</tr>
+<tr>
+<td>AV1 (<code class="mime">video/ogg; codecs="av1"</code>)</td>
+<td>AOMedia Video 1 inside an Ogg container</td>
+<td>Google</td>
+<td id="media-video-av1-ogg"></td>
+</tr>
+<tr>
+<td>AV1 (<code class="mime">video/webm; codecs="av1"</code>)</td>
+<td>AOMedia Video 1 inside an WebM container</td>
+<td>Google</td>
+<td id="media-video-av1-webm"></td>
 </tr>
 </table>
 <h3>Playlists</h3>
@@ -224,7 +332,7 @@
 <th>Supported</th>
 </tr>
 <tr>
-<td>MPEG-DASH (<code class="mime">application/dash+xml</code>)</td>
+<td>DASH (<code class="mime">application/dash+xml</code>)</td>
 <td>Dynamic Adaptive Streaming over HTTP</td>
 <td>MPEG</td>
 <td id="media-streaming-dash"></td>
@@ -311,8 +419,11 @@ setSupported(mediasource,BrowserSupportChecker.existsGlobal('MediaSource'));
 //////
 ////// MEDIA - CONTAINERS
 //////
-let flashvideo = document.getElementById('media-containers-flashvideo');
-setSupported(flashvideo,BrowserSupportChecker.isCodecMIMETypeSupported('video/x-flv'));
+let f4v = document.getElementById('media-containers-f4v');
+setSupported(f4v,BrowserSupportChecker.isCodecMIMETypeSupported('video/x-f4v'));
+
+let flv = document.getElementById('media-containers-flv');
+setSupported(flv,BrowserSupportChecker.isCodecMIMETypeSupported('video/x-flv'));
 
 let matroska_audio = document.getElementById('media-containers-matroska-audio');
 setSupported(matroska_audio,BrowserSupportChecker.isCodecMIMETypeSupported('audio/x-matroska'));
@@ -341,50 +452,101 @@ setSupported(webm_video,BrowserSupportChecker.isCodecMIMETypeSupported('video/we
 //////
 ////// MEDIA - AUDIO
 //////
-let flac = document.getElementById('media-audio-flac');
-setSupported(flac,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="flac"'));
-
 let flac_raw = document.getElementById('media-audio-flac-raw');
 setSupported(flac_raw,BrowserSupportChecker.isCodecMIMETypeSupported('audio/flac'));
 
-let opus = document.getElementById('media-audio-opus');
-setSupported(opus,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="opus"'));
+let flac_ogg = document.getElementById('media-audio-flac-ogg');
+setSupported(flac_ogg,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="flac"'));
+
+let flac_webm = document.getElementById('media-audio-flac-webm');
+setSupported(flac_webm,BrowserSupportChecker.isCodecMIMETypeSupported('audio/webm; codecs="flac"'));
 
 let opus_raw = document.getElementById('media-audio-opus-raw');
 setSupported(opus_raw,BrowserSupportChecker.isCodecMIMETypeSupported('audio/opus'));
 
-let speex = document.getElementById('media-audio-speex');
-setSupported(speex,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="speex"'));
+let opus_ogg = document.getElementById('media-audio-opus-ogg');
+setSupported(opus_ogg,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="opus"'));
+
+let opus_webm = document.getElementById('media-audio-opus-webm');
+setSupported(opus_webm,BrowserSupportChecker.isCodecMIMETypeSupported('audio/webm; codecs="opus"'));
 
 let speex_raw = document.getElementById('media-audio-speex-raw');
 setSupported(speex_raw,BrowserSupportChecker.isCodecMIMETypeSupported('audio/speex') || BrowserSupportChecker.isCodecMIMETypeSupported('audio/x-speex'));
 
-let vorbis = document.getElementById('media-audio-vorbis');
-setSupported(vorbis,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="vorbis"'));
+let speex_ogg = document.getElementById('media-audio-speex-ogg');
+setSupported(speex_ogg,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="speex"'));
+
+let speex_webm = document.getElementById('media-audio-speex-webm');
+setSupported(speex_webm,BrowserSupportChecker.isCodecMIMETypeSupported('audio/webm; codecs="speex"'));
 
 let vorbis_raw = document.getElementById('media-audio-vorbis-raw');
 setSupported(vorbis_raw,BrowserSupportChecker.isCodecMIMETypeSupported('audio/vorbis'));
 
+let vorbis_ogg = document.getElementById('media-audio-vorbis-ogg');
+setSupported(vorbis_ogg,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg; codecs="vorbis"'));
+
+let vorbis_webm = document.getElementById('media-audio-vorbis-webm');
+setSupported(vorbis_webm,BrowserSupportChecker.isCodecMIMETypeSupported('audio/webm; codecs="vorbis"'));
+
 //////
 ////// MEDIA - VIDEO
 //////
-let daala = document.getElementById('media-video-daala');
-setSupported(daala,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; codecs="daala"'));
-
 let daala_raw = document.getElementById('media-video-daala-raw');
 setSupported(daala_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/daala'));
 
-let theora = document.getElementById('media-video-theora');
-setSupported(theora,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; codecs="theora"'));
+let daala_ogg = document.getElementById('media-video-daala-ogg');
+setSupported(daala_ogg,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; codecs="daala"'));
+
+let daala_webm = document.getElementById('media-video-daala-webm');
+setSupported(daala_webm,BrowserSupportChecker.isCodecMIMETypeSupported('video/webm; codecs="daala"'));
 
 let theora_raw = document.getElementById('media-video-theora-raw');
 setSupported(theora_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/theora'));
 
-let vp8 = document.getElementById('media-video-vp8');
-setSupported(vp8,BrowserSupportChecker.isCodecMIMETypeSupported('video/webm; codecs="vp8"'));
+let theora_ogg = document.getElementById('media-video-theora-ogg');
+setSupported(theora_ogg,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; codecs="theora"'));
+
+let theora_webm = document.getElementById('media-video-theora-webm');
+setSupported(theora_webm,BrowserSupportChecker.isCodecMIMETypeSupported('video/webm; codecs="theora"'));
+
+let vp3_raw = document.getElementById('media-video-vp3-raw');
+setSupported(vp3_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/x-vp3'));
+
+let vp5_raw = document.getElementById('media-video-vp5-raw');
+setSupported(vp5_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/x-vp5'));
+
+let vp6_raw = document.getElementById('media-video-vp6-raw');
+setSupported(vp6_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/x-vp6'));
+
+let vp7_raw = document.getElementById('media-video-vp7-raw');
+setSupported(vp7_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/x-vp7'));
 
 let vp8_raw = document.getElementById('media-video-vp8-raw');
-setSupported(vp8_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/vp8'));
+setSupported(vp8_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/vp8') || BrowserSupportChecker.isCodecMIMETypeSupported('video/x-vp8'));
+
+let vp8_ogg = document.getElementById('media-video-vp8-ogg');
+setSupported(vp8_ogg,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; codecs="vp8"'));
+
+let vp8_webm = document.getElementById('media-video-vp8-webm');
+setSupported(vp8_webm,BrowserSupportChecker.isCodecMIMETypeSupported('video/webm; codecs="vp8"'));
+
+let vp9_raw = document.getElementById('media-video-vp9-raw');
+setSupported(vp9_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/vp9') || BrowserSupportChecker.isCodecMIMETypeSupported('video/x-vp9'));
+
+let vp9_ogg = document.getElementById('media-video-vp9-ogg');
+setSupported(vp9_ogg,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; codecs="vp9"'));
+
+let vp9_webm = document.getElementById('media-video-vp9-webm');
+setSupported(vp9_webm,BrowserSupportChecker.isCodecMIMETypeSupported('video/webm; codecs="vp9"'));
+
+let av1_raw = document.getElementById('media-video-av1-raw');
+setSupported(av1_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/av1'));
+
+let av1_ogg = document.getElementById('media-video-av1-ogg');
+setSupported(av1_ogg,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; codecs="av1"'));
+
+let av1_webm = document.getElementById('media-video-av1-webm');
+setSupported(av1_webm,BrowserSupportChecker.isCodecMIMETypeSupported('video/webm; codecs="av1"'));
 
 //////
 ////// MEDIA - Playlists
