@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <style>
 .mime{
 	background:lightgray;
@@ -39,6 +38,24 @@
 <th>Supported</th>
 </tr>
 <tr>
+<td>FLV (<code class="mime">video/x-flv</code>)</td>
+<td>Flash Video</td>
+<td>MacroMedia</td>
+<td id="media-containers-flashvideo"></td>
+</tr>
+<tr>
+<td>Matroska (<code class="mime">audio/x-matroska</code>)</td>
+<td>Matroska container for audio</td>
+<td>Google</td>
+<td id="media-containers-matroska-audio"></td>
+</tr>
+<tr>
+<td>Matroska (<code class="mime">video/x-matroska</code>)</td>
+<td>Matroska container for audio and video</td>
+<td>Google</td>
+<td id="media-containers-matroska-video"></td>
+</tr>
+<tr>
 <td>Ogg (<code class="mime">audio/ogg</code>)</td>
 <td>Ogg container for audio</td>
 <td>Xiph</td>
@@ -55,6 +72,24 @@
 <td>Ogg container for multiplexing</td>
 <td>Xiph</td>
 <td id="media-containers-ogg-application"></td>
+</tr>
+<tr>
+<td>QuickTime (<code class="mime">video/quicktime</code>)</td>
+<td>QuickTime</td>
+<td>Apple</td>
+<td id="media-containers-quicktime"></td>
+</tr>
+<tr>
+<td>WebM (<code class="mime">audio/webm</code>)</td>
+<td>WebM container for audio</td>
+<td>Google</td>
+<td id="media-containers-webm-audio"></td>
+</tr>
+<tr>
+<td>WebM (<code class="mime">video/webm</code>)</td>
+<td>WebM container for audio and video</td>
+<td>Google</td>
+<td id="media-containers-webm-video"></td>
 </tr>
 </table>
 <h3>Audio</h3>
@@ -145,6 +180,39 @@
 <td>Raw Theora</td>
 <td>Xiph</td>
 <td id="media-video-theora-raw"></td>
+</tr>
+<tr>
+<td>VP8 (<code class="mime">video/webm; codecs="vp8"</code>)</td>
+<td>VP8 inside an WebM container</td>
+<td>Google</td>
+<td id="media-video-vp8"></td>
+</tr>
+<tr>
+<td>VP8 (<code class="mime">video/vp8</code>)</td>
+<td>Raw VP8</td>
+<td>Google</td>
+<td id="media-video-vp8-raw"></td>
+</tr>
+</table>
+<h3>Playlists</h3>
+<table border="1">
+<tr>
+<th>Codec</th>
+<th>Description</th>
+<th>Developer</th>
+<th>Supported</th>
+</tr>
+<tr>
+<td>M3U (<code class="mime">application/mpegurl</code> and <code class="mime">application/x-mpegurl</code>)</td>
+<td>MPEG Layer III URI</td>
+<td>Winamp</td>
+<td id="media-playlists-m3u"></td>
+</tr>
+<tr>
+<td>M3U Audio (<code class="mime">audio/mpegurl</code> and <code class="mime">audio/x-mpegurl</code>)</td>
+<td>MPEG Layer III URI (Audio only)</td>
+<td>Winamp</td>
+<td id="media-playlists-m3u-audio"></td>
 </tr>
 </table>
 <h3>Streaming</h3>
@@ -243,6 +311,15 @@ setSupported(mediasource,BrowserSupportChecker.existsGlobal('MediaSource'));
 //////
 ////// MEDIA - CONTAINERS
 //////
+let flashvideo = document.getElementById('media-containers-flashvideo');
+setSupported(flashvideo,BrowserSupportChecker.isCodecMIMETypeSupported('video/x-flv'));
+
+let matroska_audio = document.getElementById('media-containers-matroska-audio');
+setSupported(matroska_audio,BrowserSupportChecker.isCodecMIMETypeSupported('audio/x-matroska'));
+
+let matroska_video = document.getElementById('media-containers-matroska-video');
+setSupported(matroska_video,BrowserSupportChecker.isCodecMIMETypeSupported('video/x-matroska'));
+
 let ogg_audio = document.getElementById('media-containers-ogg-audio');
 setSupported(ogg_audio,BrowserSupportChecker.isCodecMIMETypeSupported('audio/ogg'));
 
@@ -251,6 +328,15 @@ setSupported(ogg_video,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg
 
 let ogg_application = document.getElementById('media-containers-ogg-application');
 setSupported(ogg_application,BrowserSupportChecker.isCodecMIMETypeSupported('application/ogg'));
+
+let quicktime = document.getElementById('media-containers-quicktime');
+setSupported(quicktime,BrowserSupportChecker.isCodecMIMETypeSupported('video/quicktime'));
+
+let webm_audio = document.getElementById('media-containers-webm-audio');
+setSupported(webm_audio,BrowserSupportChecker.isCodecMIMETypeSupported('audio/webm'));
+
+let webm_video = document.getElementById('media-containers-webm-video');
+setSupported(webm_video,BrowserSupportChecker.isCodecMIMETypeSupported('video/webm'));
 
 //////
 ////// MEDIA - AUDIO
@@ -293,6 +379,21 @@ setSupported(theora,BrowserSupportChecker.isCodecMIMETypeSupported('video/ogg; c
 
 let theora_raw = document.getElementById('media-video-theora-raw');
 setSupported(theora_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/theora'));
+
+let vp8 = document.getElementById('media-video-vp8');
+setSupported(vp8,BrowserSupportChecker.isCodecMIMETypeSupported('video/webm; codecs="vp8"'));
+
+let vp8_raw = document.getElementById('media-video-vp8-raw');
+setSupported(vp8_raw,BrowserSupportChecker.isCodecMIMETypeSupported('video/vp8'));
+
+//////
+////// MEDIA - Playlists
+//////
+let m3u = document.getElementById('media-playlists-m3u');
+setSupported(m3u,BrowserSupportChecker.isCodecMIMETypeSupported('application/mpegurl') || BrowserSupportChecker.isCodecMIMETypeSupported('application/x-mpegurl'));
+
+let m3u_audio = document.getElementById('media-playlists-m3u-audio');
+setSupported(m3u_audio,BrowserSupportChecker.isCodecMIMETypeSupported('audio/mpegurl') || BrowserSupportChecker.isCodecMIMETypeSupported('audio/x-mpegurl'));
 
 //////
 ////// MEDIA - Streaming
